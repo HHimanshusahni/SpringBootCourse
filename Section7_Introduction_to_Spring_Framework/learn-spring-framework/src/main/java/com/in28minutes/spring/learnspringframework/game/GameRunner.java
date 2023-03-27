@@ -1,8 +1,13 @@
 package com.in28minutes.spring.learnspringframework.game;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
+@Component
 public class GameRunner {
 	// Using GamingConsole we don't have be specific that we need to use which game 
 	// It is not tightly coupled with the game
+	@Autowired
 	private GamingConsole game;
 	public GameRunner(GamingConsole game) {
 		this.game = game;
