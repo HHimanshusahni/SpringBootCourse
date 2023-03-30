@@ -16,7 +16,7 @@ public class BusinessService{
 //		System.out.println("========Setter Injection========");
 //		this.dataService = dataService;
 //	}
-
+	@Autowired // We can use autowired above dataservice variable for constructo based dependency injection
 	public BusinessService(DataService dataService) {
 		super();
 		System.out.println("Constructor Injection");

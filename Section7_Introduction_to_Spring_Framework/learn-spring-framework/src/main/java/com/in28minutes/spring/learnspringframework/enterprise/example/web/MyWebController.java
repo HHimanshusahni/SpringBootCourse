@@ -9,6 +9,11 @@ import com.in28minutes.spring.learnspringframework.enterprise.example.business.B
 public class MyWebController {
 	@Autowired
 	private BusinessService businessService;
+	public MyWebController(BusinessService businessService) {
+		super();
+		System.out.println("Constructor MyWebControllers");
+		this.businessService = businessService;
+	}
 	public long returnValueFromBusinessService(){
 		return businessService.calculateSum();
 	}
