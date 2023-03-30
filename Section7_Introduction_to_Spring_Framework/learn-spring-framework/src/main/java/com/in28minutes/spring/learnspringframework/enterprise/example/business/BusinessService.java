@@ -11,11 +11,18 @@ import com.in28minutes.spring.learnspringframework.enterprise.example.web.data.D
 public class BusinessService{
 
 	private DataService dataService;
-	@Autowired
-	public void setDataService(DataService dataService) {
-		System.out.println("========Setter Injection========");
+//	@Autowired
+//	public void setDataService(DataService dataService) {
+//		System.out.println("========Setter Injection========");
+//		this.dataService = dataService;
+//	}
+
+	public BusinessService(DataService dataService) {
+		super();
+		System.out.println("Constructor Injection");
 		this.dataService = dataService;
 	}
+
 	public long calculateSum() {
 		List<Integer> data = dataService.getData();
 		// summing values in the list 
